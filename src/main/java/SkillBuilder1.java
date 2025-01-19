@@ -9,7 +9,24 @@ import java.util.Scanner;
 public class SkillBuilder1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //TODO : Replace this comment with your code
+        String userName;
+        double spice;
+        double spiceValue;
+
+        System.out.println("You're Jane's friend!");
+        System.out.println("\"What's your name?\"");
+        userName = input.nextLine();
+
+        System.out.println("Enter a floating-point number:");
+        spice = input.nextDouble();
+
+        spiceValue = Math.pow(((2.0)), (Math.sqrt(5.0)/Math.pow(spice, 3.0))) * (4.0/3.0);
+        System.out.println("Well " + userName + ", the spice value resulted in " + spiceValue);
+
+        int spiceValue2 = (int)(spiceValue*100.0);
+        double spiceValue3 = (double)spiceValue2/100;
+        System.out.println("And the converted value is " + spiceValue3);
+
     }
 
     public static void calcWallPaint() {
@@ -19,7 +36,7 @@ public class SkillBuilder1 {
         final double squareFeetPerGallons = 350.0;
         final double gallonsPerCan = 1.0;
 
-        // Prompt user to input wall's width
+        // Prompt user to input wall's height
         System.out.println("Enter wall height (feet):");
         double wallHeight = input.nextDouble();
 
@@ -27,10 +44,12 @@ public class SkillBuilder1 {
         System.out.println("Enter wall width (feet):");
         double wallWidth = input.nextDouble();
 
-        // TODO: Calculate and output the wall's area
+        double wallArea = wallWidth * wallHeight;
+        System.out.println("Wall area: " + (int)wallArea + " square feet");
 
-        // TODO: Calculate and output the amount of paint in gallons needed to paint the wall
+        double needed = wallArea/squareFeetPerGallons;
+        System.out.printf("Paint needed: %.2f gallons%n", needed);
+        System.out.println("Cans needed: " + (int)Math.ceil(needed) + " can(s)");
 
-        // TODO: Calculate and output the number of 1 gallon cans needed to paint the wall, rounded up to nearest integer
     }
 }
